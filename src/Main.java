@@ -1,17 +1,38 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        String[] tablicaStringow = new String[5];
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+
+        tablicaStringow[0] = "Element 1";
+        tablicaStringow[1] = "Element 5";
+        tablicaStringow[2] = "Element 3";
+        tablicaStringow[3] = "Element 4";
+        tablicaStringow[4] = "Element 2";
+
+        // Sortowanie elementów tablicy
+        Arrays.sort(tablicaStringow);
+
+        for (int i = 0; i < tablicaStringow.length; i++) {
+            System.out.println("Element " + (i + 1) + ": " + tablicaStringow[i]);
+        }
+
+        // Wyszukiwanie elementu
+        String szukanyElement = "Element 3";
+        boolean znaleziono = false;
+
+        for (int i = 0; i < tablicaStringow.length; i++) {
+            if (tablicaStringow[i].equals(szukanyElement)) {
+                znaleziono = true;
+                System.out.println("Znaleziono element '" + szukanyElement + "' na pozycji " + i);
+                break;
+            }
+        }
+
+        if (!znaleziono) {
+            System.out.println("Nie znaleziono elementu '" + szukanyElement + "' w tablicy.");
         }
     }
 }
